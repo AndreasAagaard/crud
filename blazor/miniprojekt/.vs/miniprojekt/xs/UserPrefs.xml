@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{31C7E837-733C-404D-BD8E-B079ED784583}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="miniprojekt/Client/Pages/FetchData.razor">
+    <Files>
+      <File FileName="miniprojekt/Server/Controllers/WeatherForecastController.cs" Line="57" Column="43" />
+      <File FileName="miniprojekt/Server/appsettings.json" />
+      <File FileName="miniprojekt/Server/Program.cs" />
+      <File FileName="miniprojekt/Client/Pages/FetchData.razor" Line="50" Column="6" />
+      <File FileName="miniprojekt/Client/Pages/Counter.razor" />
+      <File FileName="miniprojekt/Shared/Shelter.cs" />
+      <File FileName="miniprojekt/Client/Shared/Booking.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="miniprojekt" expanded="True">
+            <Node name="miniprojekt.Client" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="FetchData.razor" selected="True" />
+              </Node>
+              <Node name="Shared" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="miniprojekt.Server" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="miniprojekt.Shared" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.miniprojekt.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

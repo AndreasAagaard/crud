@@ -1,0 +1,67 @@
+﻿@page "/fetchdata"
+@using miniprojekt.Shared
+@inject HttpClient Http
+
+
+<input type="date" placeholder="Dato" onfocus="(this.type='date')" @bind="inputStartDate" /><br />
+<input type="date" placeholder="Dato" onfocus="(this.type='date')" @bind="inputEndDate" /><br />
+<input type="number" placeholder="Hvor mange bliver i?" @bind="inputAntal" /><br />
+<input placeholder="Skriv id på shelter" @bind="inputShelter" /><br />
+<input placeholder="Indtast Bruger-id" @bind="inputBruger" /><br />
+<button @onclick="BookShelter">Book Shelter</button>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>@forecasts</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.properties.cvr_navn</td>
+                    <td>@forecast.properties.navn</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private shelter[] forecasts;
+    Booking testBook;
+    private DateTime inputStartDate;
+    private DateTime inputEndDate;
+    private int inputAntal;
+    private string inputShelter;
+    private string inputBruger;
+
+    private void BookShelter()
+    {
+        testBook = new Booking(inputStartDate, inputEndDate, inputAntal, inputShelter, inputBruger);
+        postUser(testBook);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<shelter[]>("WeatherForecast");
+    }
+
+    public Task<HttpResponseMessage> postUser(Booking booking)
+    {
+        return Http.PostAsJsonAsync<Booking>("WeatherForecast", booking);
+
+    }
+
+
+}
